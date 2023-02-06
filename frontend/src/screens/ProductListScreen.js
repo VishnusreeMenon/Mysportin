@@ -7,9 +7,11 @@ import Message from '../components/Message'
 import Paginate from '../components/Paginate'
 import { listProducts, deleteProduct, createProduct } from '../actions/productActions'
 import { PRODUCT_CREATE_RESET } from '../constants/productConstants'
+import { useNavigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 function ProductListScreen({ history, match }) {
-
+    let navigate = useNavigate()
     const dispatch = useDispatch()
 
     const productList = useSelector(state => state.productList)
@@ -25,16 +27,24 @@ function ProductListScreen({ history, match }) {
     const userLogin = useSelector(state => state.userLogin)
     const { userInfo } = userLogin
 
-    let keyword = history.location.search
+    function useQuery() {
+        const { search } = useLocation();
+      
+        return React.useMemo(() => new URLSearchParams(search), [search]);
+    }
+
+    let keyword = useQuery();
+    console.log(keyword)
+
     useEffect(() => {
         dispatch({ type: PRODUCT_CREATE_RESET })
 
-        if (!userInfo.isAdmin) {
-            history.push('/login')
-        }
+        // if (!userInfo.isAdmin) {
+        //     navigate('/login')
+        // }
 
         if (successCreate) {
-            history.push(`/admin/product/${createdProduct._id}/edit`)
+            navigate(`/admin/product/${createdProduct._id}/edit`)
         } else {
             dispatch(listProducts(keyword))
         }

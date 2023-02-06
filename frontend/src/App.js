@@ -43,14 +43,15 @@ function App() {
           <Route path='/placeorder' element={PlaceOrderScreen} />
           {/* <Route path='/order/:id' element={OrderScreen} /> */}
           <Route path='/payment' element={PaymentScreen} />
-          <Route path='/product/:id' element={<ProductScreen/>} />
+          <Route path='/product/' element={<ProductScreen/>} />
           <Route path='/cart/:id?' element={CartScreen} />
 
           <Route path='/admin/userlist' element={UserListScreen} />
           <Route path='/admin/user/:id/edit' element={UserEditScreen} />
 
-          <Route path='/admin/productlist' element={ProductListScreen} />
-          <Route path='/admin/product/:id/edit' element={ProductEditScreen} />
+          <Route path='/admin/productlist' element={<ProductListScreen/>} />
+          <Route path='/admin/productlist/:keyword' element={<ProductListScreen/>} />
+          <Route path='/admin/product/:id/edit' element={<ProductEditScreen/>} />
 
           <Route path='/admin/orderlist' element={OrderListScreen} />
         </Routes>

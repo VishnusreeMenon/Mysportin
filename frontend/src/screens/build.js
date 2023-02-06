@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import Navigbar from './navbar.js';
 import '../index.css'
+
 class Build extends Component{
     render(){
         return(
+
             <div className="build-parallax">
                 <Navigbar/>
                 <br/>
@@ -16,7 +18,7 @@ class Build extends Component{
                     <div className="row row-cols-1 row-cols-lg-2 g-5">
                         <div className="col mt-3">
                             
-                            <div className="" style={{width: "28rem",height:"330px", opacity:0.70,backgroundColor:"white"}}>
+                            <div className="card" style={{width: "100%",height:"", opacity:0.70,backgroundColor:"white"}}>
                                     
                                 <div className="card-body">
                                     <h4 className="card-title" style={{textAlign:"center",color:"violet"}}>Arcade</h4>
@@ -34,7 +36,7 @@ class Build extends Component{
                         </div>
                         
                         <div className="col mt-3">
-                            <div className="" style={{width: "28rem",height:"330px", opacity:0.70,backgroundColor:"white"}}>
+                            <div className="card" style={{width: "100%",height:"", opacity:0.70,backgroundColor:"white"}}>
                                     
                                 <div className="card-body">
                                     <h4 className="card-title" style={{textAlign:"center",color:"violet"}}>VR Games</h4>
@@ -49,7 +51,7 @@ class Build extends Component{
                         </div>
                         
                         <div className="col mt-3">
-                            <div className="" style={{width: "28rem",height:"330px", opacity:0.70,backgroundColor:"white"}}>
+                            <div className="card" style={{width: "100%",height:"", opacity:0.70,backgroundColor:"white"}}>
                                     
                                 <div className="card-body">
                                     <h4 className="card-title" style={{textAlign:"center",color:"violet"}}>Simulator</h4>
@@ -64,7 +66,7 @@ class Build extends Component{
                         </div>
                         
                         <div className="col mt-3">
-                            <div className="" style={{width: "28rem",height:"330px", opacity:0.70,backgroundColor:"white"}}>
+                            <div className="card" style={{width: "100%",height:"", opacity:0.70,backgroundColor:"white"}}>
                                     
                                 <div className="card-body">
                                     <h4 className="card-title" style={{textAlign:"center",color:"violet"}}>Trampoline Park</h4>
@@ -77,10 +79,6 @@ class Build extends Component{
                                 </div>
                             </div>
                         </div>
-                        
-                        
-                        
-
                         
                     </div>
                 

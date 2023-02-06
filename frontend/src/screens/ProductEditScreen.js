@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { Link , useNavigate, useParams} from 'react-router-dom'
 import { Form, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Loader from '../components/Loader'
@@ -11,8 +11,10 @@ import { PRODUCT_UPDATE_RESET } from '../constants/productConstants'
 
 
 function ProductEditScreen({ match, history }) {
-
-    const productId = match.params.id
+    
+    const url_data = useParams();
+    const productId = Number(url_data['id'])
+    
 
     const [name, setName] = useState('')
     const [price, setPrice] = useState(0)
@@ -24,10 +26,10 @@ function ProductEditScreen({ match, history }) {
     const [uploading, setUploading] = useState(false)
 
     const dispatch = useDispatch()
-
+    const navigate = useNavigate();
     const productDetails = useSelector(state => state.productDetails)
     const { error, loading, product } = productDetails
-
+    // console.log("here:",productDetails)
     const productUpdate = useSelector(state => state.productUpdate)
     const { error: errorUpdate, loading: loadingUpdate, success: successUpdate } = productUpdate
 
@@ -36,7 +38,7 @@ function ProductEditScreen({ match, history }) {
 
         if (successUpdate) {
             dispatch({ type: PRODUCT_UPDATE_RESET })
-            history.push('/admin/productlist')
+            navigate('/admin/productlist')
         } else {
             if (!product.name || product._id !== Number(productId)) {
                 dispatch(listProductDetails(productId))
@@ -148,14 +150,15 @@ function ProductEditScreen({ match, history }) {
                                 >
                                 </Form.Control>
 
-                                <Form.File
+                                <Form.Control
+                                    type = 'file'
                                     id='image-file'
                                     label='Choose File'
                                     custom
                                     onChange={uploadFileHandler}
                                 >
 
-                                </Form.File>
+                                </Form.Control>
                                 {uploading && <Loader />}
 
                             </Form.Group>
