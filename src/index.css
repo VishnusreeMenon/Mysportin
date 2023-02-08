@@ -56,7 +56,7 @@ margin: 0 auto;
 
 .build-parallax {
 /* The image used */
-background-image: url("../public/images/build_screen22.png" );
+background-image: url("./frontend/public/images/build_screen22.png" );
 /*   
 min-height: 200px; */
 /* height: 10%; */
@@ -123,7 +123,7 @@ transition: all 0.5s;
 
 .card-parallax {
 /* The image used */
-background-image: url("../public/images/vr_goggles.png" );
+background-image: url("./frontend/public/images/vr_goggles.png" );
 
 /* min-height: 200px; */
 /* height: 10%; */
@@ -143,7 +143,7 @@ background-position: center;
 
 .parallax {
 /* The image used */
-background-image: url("../public/images/main_screen.png" );
+background-image: url("./frontend/public/images/main_screen.png" );
 
 /* Set a specific height */
 /* min-height: 200px; */
