@@ -1,0 +1,182 @@
+main{
+    min-height: 80vh;
+}
+
+h1{
+  font-size: 1.8rem;
+  padding:1rem 0;
+}
+
+h2{
+  font-size: 1.4rem;
+  padding:0.5rem 0;
+}
+
+h3{
+    padding:1rem 0;
+}
+
+.rating span{
+  margin:0.1rem;
+}
+
+/* carousel */
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+  display: flex;
+}
+.carousel-caption {
+  position: absolute;
+  top: 0;
+}
+
+.carousel-caption h4 {
+  color: #fff;
+}
+
+.carousel img {
+  display:block;
+  height: 300px;
+  padding: 30px;
+  margin: 40px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.carousel a {
+  margin: 0 auto;
+}
+@media (max-width: 900px) {
+  .carousel-caption h2 {
+    font-size: 2.5vw;
+  }
+}
+
+
+.build-parallax {
+  /* The image used */
+  background-image: url("../public/images/build_screen22.png" );
+/*   
+  min-height: 200px; */
+  /* height: 10%; */
+  /* Create the parallax scrolling effect */
+  /* background-attachment: fixed;
+  background-position: center;
+  
+  background-size: fill; */
+  /* background-repeat: repeat; */
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%; 
+  width: 100%;
+  background-position: center;
+  /* background-repeat: no-repeat; */
+  /* margin: 0; */
+  /* min-height: 200px;  */
+}
+
+.navbar .navbar-nav .nav-link {
+  color: #000000;
+  font-size: 1em;
+  }
+.navbar .navbar-nav .nav-link:hover {
+  color: #000000;
+  }
+.navbar .navbar-nav .nav-item {
+  position: relative;
+  }
+.navbar .navbar-nav .nav-item::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color:white;
+  width: 0%;
+  content: "";
+  height: 4px;
+  transition: all 0.25s;
+  }
+
+.navbar .navbar-nav .nav-item:hover::after {
+  width: 100%;
+}
+
+@media only screen and (min-width: 992px) {
+  .navbar {
+    padding: 0;
+  }
+  
+  .navbar .navbar-nav .nav-link {
+    padding: 1em 0;
+  }   
+  .navbar .navbar-nav .nav-item {
+    margin: 0 0.5em;
+  }
+}
+
+.navbar .navbar-nav .nav-item::after {
+  transition: all 0.5s;
+}
+
+
+.card-parallax {
+  /* The image used */
+  background-image: url("../public/images/vr_goggles.png" );
+  
+  /* min-height: 200px; */
+  /* height: 10%; */
+  /* Create the parallax scrolling effect */
+  /* background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: fill; */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 1000px;
+  width: 100%;
+  margin: 0;
+  background-position: center;
+}
+
+.parallax {
+  /* The image used */
+  background-image: url("../public/images/main_screen.png" );
+
+  /* Set a specific height */
+  /* min-height: 200px; */
+  /* height: 10%; */
+  /* Create the parallax scrolling effect */
+  /* background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: fill; */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 1000px;
+  width: 100%;
+  margin: 0;
+}
+
+.sliders{
+  text-align: left;
+  margin-left: 5rem;
+}
+.theSlider{
+  width: 60%;
+  max-width: 750px;
+  margin-left: 0%;
+}
+
+.checkboxes{
+  text-align: start;
+  font-size: large;
+}
+
+#button{
+  display: flex;
+  justify-content: flex-end;
+}
