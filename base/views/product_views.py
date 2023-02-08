@@ -63,7 +63,7 @@ def createProduct(request):
         name='Sample Name',
         price=0,
         brand='Sample Brand',
-        countInStock=0,
+        countInStock=2,
         category='Sample Category',
         description=''
     )
@@ -113,7 +113,7 @@ def uploadImage(request):
 
 
 @api_view(['POST'])
-@permission_classes([IsAuthenticated])
+# @permission_classes([IsAuthenticated])
 def createProductReview(request, pk):
     user = request.user
     product = Product.objects.get(_id=pk)

@@ -94,8 +94,9 @@ function RegisterScreen({ location, history }) {
                     >
                     </Form.Control>
                 </Form.Group>
-
-                <Button type='submit' variant='primary'>
+                <br/>
+                <br/>
+                <Button type='submit' className='btn rounded-pill' variant='primary'>
                     Register
                 </Button>
 

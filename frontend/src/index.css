@@ -159,3 +159,23 @@ h3{
   width: 100%;
   margin: 0;
 }
+
+.sliders{
+  text-align: left;
+  margin-left: 5rem;
+}
+.theSlider{
+  width: 60%;
+  max-width: 750px;
+  margin-left: 0%;
+}
+
+.checkboxes{
+  text-align: start;
+  font-size: large;
+}
+
+#button{
+  display: flex;
+  justify-content: flex-end;
+}

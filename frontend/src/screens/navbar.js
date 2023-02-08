@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, Form, FormControl, Button, NavDropdown } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap'
 
 class NavigBar extends Component {
   state = {
@@ -57,6 +58,10 @@ class NavigBar extends Component {
               </NavDropdown>
 
               <Nav.Link className="nav-item" href="/build" style={{color:"white",backgroundColor:this.getColor(this.state.innerWidth),width:"100%"}} id="basic-nav-dropdown" >Build</Nav.Link>
+
+              <LinkContainer to='/cart' style={{color:"white",backgroundColor:this.getColor(this.state.innerWidth),width:"100%"}}>
+                <Nav.Link ><i className="fas fa-shopping-cart"></i></Nav.Link>
+              </LinkContainer>
               
               <Nav.Link className="nav-item" href="/profile" style={{color:"white",backgroundColor:this.getColor(this.state.innerWidth),width:"100%"}} id="basic-nav-dropdown" >Account</Nav.Link>
             </Nav>

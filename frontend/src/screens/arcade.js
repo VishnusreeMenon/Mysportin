@@ -8,7 +8,7 @@ import NavigBar from './navbar';
 const Test = () => {
   let navigate = useNavigate();
   function routeChange(id){ 
-    let path = '/product/'+id; 
+    let path = '/product/' +id; 
     navigate(path);
   }
   const [prod_list, productSet] = useState([])
@@ -36,7 +36,7 @@ const Test = () => {
     
       return(
         <div className="card h-40" style={{width: "400px"}} key={index}>
-              <img src={prod.image} className="card-img-top" />
+              <img src={prod.image} width = "373px" height = "297px" className="card-img-top" />
               <div className="card-body">
                 <h5 className="card-title">{prod.name}</h5>
                 <p className="fs-11" style={{opacity: "0.7"}}>For kids</p>
@@ -45,7 +45,7 @@ const Test = () => {
                 <p>({prod.numReviews})</p>
                 <p className="card-text">${prod.price}</p>
                 <p>Delivery by 31st January</p>
-                <button className="btn btn-outline-dark rounded-pill" onClick={routeChange}>Buy Now?</button>
+                <button className="btn btn-outline-dark rounded-pill" onClick={()=> routeChange(prod._id)}>Buy Now?</button>
               </div>
             </div>
       )
@@ -54,15 +54,18 @@ const Test = () => {
   return (
     <div>
         <NavigBar/>
-      <h1 style={{textAlign: "center"}}>ARCADE</h1>
-      <br />
-      <div className="container">
-        <div className="row row-cols-1 row-cols-lg-3 g-5">
-          
-          {prodList}
+        <div className="">
 
+          <h1 className=""  style={{textAlign: "center", paddingTop:"8rem"}}>ARCADE</h1>
+          <br />
+          <div className="container">
+            <div className="row row-cols-1 row-cols-lg-3 g-5">
+              
+              {prodList}
+
+            </div>
+          </div>
         </div>
-       </div>
           
           
           

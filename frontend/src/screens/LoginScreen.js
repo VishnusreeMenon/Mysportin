@@ -58,8 +58,9 @@ function LoginScreen({ location, history }) {
                     >
                     </Form.Control>
                 </Form.Group>
-
-                <Button type='submit' variant='primary'>
+                <br/>
+                <br/>
+                <Button type='submit' variant='primary' className='btn rounded-pill'>
                     Sign In
                 </Button>
             </Form>

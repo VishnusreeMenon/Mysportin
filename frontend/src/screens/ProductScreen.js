@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link , useNavigate, useParams} from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Button, Card, Form } from 'react-bootstrap'
 import Rating from '../components/Rating'
 import Loader from '../components/Loader'
@@ -14,6 +14,9 @@ function ProductScreen({ match, history }) {
     const [comment, setComment] = useState('')
 
     const dispatch = useDispatch()
+    const navigate = useNavigate();
+    const url_data = useParams();
+    const productId = Number(url_data['id'])
 
     const productDetails = useSelector(state => state.productDetails)
     const { loading, error, product } = productDetails
@@ -35,18 +38,18 @@ function ProductScreen({ match, history }) {
             dispatch({ type: PRODUCT_CREATE_REVIEW_RESET })
         }
 
-        dispatch(listProductDetails(match.params.id))
+        dispatch(listProductDetails(productId))
 
     }, [dispatch, match, successProductReview])
 
     const addToCartHandler = () => {
-        history.push(`/cart/${match.params.id}?qty=${qty}`)
+        navigate(`/cart/${productId}/${qty}`)
     }
 
     const submitHandler = (e) => {
         e.preventDefault()
         dispatch(createProductReview(
-            match.params.id, {
+            productId, {
             rating,
             comment
         }
@@ -58,12 +61,12 @@ function ProductScreen({ match, history }) {
             <Link to='/' className='btn btn-light my-3'>Go Back</Link>
             {loading ?
                 <Loader />
-                : error
-                    ? <Message variant='danger'>{error}</Message>
+                // : error
+                //     ? <Message variant='danger'>{error}</Message>
                     : (
-                        <div>
+                        <div className=''>
                             <Row>
-                                <Col md={6}>
+                                <Col md={6} style = {{paddingLeft:"2rem"}}>
                                     <Image src={product.image} alt={product.name} fluid />
                                 </Col>
 
@@ -90,7 +93,7 @@ function ProductScreen({ match, history }) {
 
 
                                 <Col md={3}>
-                                    <Card>
+                                    <Card className='container' style = {{paddingLeft:"0rem"}}>
                                         <ListGroup variant='flush'>
                                             <ListGroup.Item>
                                                 <Row>
@@ -143,14 +146,17 @@ function ProductScreen({ match, history }) {
                                                     type='button'>
                                                     Add to Cart
                                                 </Button>
+                                                
                                             </ListGroup.Item>
                                         </ListGroup>
                                     </Card>
                                 </Col>
                             </Row>
+                            <br/>
+                            <br/>
 
                             <Row>
-                                <Col md={6}>
+                                <Col md={6} className='' style = {{paddingLeft:"2rem"}}>
                                     <h4>Reviews</h4>
                                     {product.reviews.length === 0 && <Message variant='info'>No Reviews</Message>}
 
@@ -198,7 +204,8 @@ function ProductScreen({ match, history }) {
                                                             onChange={(e) => setComment(e.target.value)}
                                                         ></Form.Control>
                                                     </Form.Group>
-
+                                                    <br/>
+                                                    <br/>
                                                     <Button
                                                         disabled={loadingProductReview}
                                                         type='submit'

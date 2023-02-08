@@ -110,7 +110,8 @@ function ProductEditScreen({ match, history }) {
                 {loadingUpdate && <Loader />}
                 {errorUpdate && <Message variant='danger'>{errorUpdate}</Message>}
 
-                {loading ? <Loader /> : error ? <Message variant='danger'>{error}</Message>
+                {loading ? <Loader /> 
+                // : error ? <Message variant='danger'>{error}</Message>
                     : (
                         <Form onSubmit={submitHandler}>
 
