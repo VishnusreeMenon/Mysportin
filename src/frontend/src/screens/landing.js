@@ -62,19 +62,15 @@ function Landing(location) {
         <br/>
 
         <h3 style={{ color: 'white' ,textAlign:"center"}}>Sign-in for faster checkout</h3>
-
         <br />
-        <br />
-        <div className="container" style={{ width: 350,paddingLeft:"auto" }}>
-          <div className="position-relative  top-50 start-50 translate-middle" style={{ width: 350,paddingLeft:"auto" }}>
-            <form onSubmit={submitHandler}>
-              <div className="mb-3">
+        <form onSubmit={submitHandler} className=''>
+              <div className="form-field">
                 <input
                   type="email"
                   className="rounded form-control"
                   id="email"
                   placeholder="Email or Username"
-                  style={{ height: 45 }}
+                  style={{ height: 45 ,width:"50%",margin:"auto"}}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -87,32 +83,32 @@ function Landing(location) {
                   id="password"
                   placeholder="Password"
                   aria-describedby="Help"
-                  style={{ height: 45 }}
+                  style={{ height: 45 ,width:"50%",margin:"auto"}}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
+                <div id="Help" className="form-text" style={{ color: 'lightgray',paddingLeft:"25%"}}>
+                By tapping sign-in you are agreeing to WebStore's Terms of Use and Privacy policy
+                </div>
               </div>
 
-              <div id="Help" className="form-text" style={{ color: 'lightgray' }}>
-                By tapping sign-in you are agreeing to WebStore's Terms of Use and Privacy policy
-              </div>
+              
               <br />
-              <div className="mb-3">
-                <button type="submit" className="rounded-pill btn-light" style={{ width: 350, height: 45, textAlign: 'center' }}>
+              <button type="submit" className="rounded-pill btn btn-light" style={{ width: 150, height: 45, textAlign: 'center',margin:"auto",marginLeft:"25%" }}>
                   Sign In
                 </button>
-              </div>
-              <div className="mb-3">
-                <button type="submit" className="rounded-pill btn btn-outline-light" style={{ width: 350, height: 45, textAlign: 'center' }} onClick = {routeChange}>
-                  Sign Up
-                </button>
-              </div>
+              <br/>
+              <br/>
+              <button type="submit" className="rounded-pill btn btn-outline-light" style={{ width: 150, height: 45, textAlign: 'center',marginLeft:"25%" }} onClick = {routeChange}>
+                Sign Up
+              </button>
+              <br/>
+              <a href="#" style={{marginLeft:"50%"}}>Forgot password?</a>
             </form>
-
-            <a href="#">Forgot password?</a>
-          </div>
-        </div>
+            
+        
       </div>
+      
     </div>
   );
 }

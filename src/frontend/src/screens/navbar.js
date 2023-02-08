@@ -20,6 +20,7 @@ class NavigBar extends Component {
       if (innerWidth <= 770) return "black"
       return ""
   }
+  
   render() {
     return (
       <div>
