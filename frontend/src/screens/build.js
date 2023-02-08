@@ -131,8 +131,8 @@ function Build(){
                 <br/>
                 <h1 style={{textAlign:"center",color:"violet",underline:""}}>Build your Gamezone</h1>
                 <div className='row row-cols-1 row-cols-lg-2 g-5'>
-                    <div className='col mt-3' style={{paddingLeft:'2rem'}}>
-                        <h3>Budget</h3>
+                    <div className='col mt-3' style={{paddingLeft:'2rem',color:"white"}}>
+                        <h3 style={{color:"white"}}>Budget</h3>
                         <input
                             type="range"
                             min={0}
@@ -142,9 +142,9 @@ function Build(){
                             onChange={handleBudget}
                             className="theSlider"
                         />
-                        <p>Rs. {budget}</p>
+                        <p style={{color:"white"}}>Rs. {budget}</p>
                         <br/>
-                        <h3>Area</h3>
+                        <h3 style={{color:"white"}}>Area</h3>
                         <input
                             type="range"
                             min={0}
@@ -156,7 +156,7 @@ function Build(){
                         />
                         <p>{area} sft.</p>
                         <br/>
-                        <h3>Location</h3>
+                        <h3 style={{color:"white"}}>Location</h3>
                         <input
                             type="text"
                             placeholder="Enter Manually"
@@ -168,11 +168,11 @@ function Build(){
                         <br/><br/>
                     </div>
                     <div className='col mt-3' style={{paddingLeft:'2rem'}}>
-                        <h3>Category</h3>
+                        <h3 style={{color:"white"}}>Category</h3>
                         <div className="checkboxes">
                             {options.map((option) => (
                                 <div key={option}>
-                                <label>
+                                <label style={{color:"white"}}>
                                     <input
                                     type="checkbox"
                                     value={option}
@@ -188,7 +188,7 @@ function Build(){
                         <Button variant="dark" className='rounded-pill'>Result</Button>
                         <br/>
                         <br/><br/>
-                        <label>
+                        <label style={{color:"white"}}>
                             <input type="checkbox" value={"yes"} /> Exclude out of Stock
                         </label>
                         <br/><br/><br/>

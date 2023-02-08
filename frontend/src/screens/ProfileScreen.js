@@ -10,6 +10,7 @@ import { listMyOrders } from '../actions/orderActions'
 import {useNavigate} from 'react-router-dom';
 import '../index.css';
 import { logout } from '../actions/userActions'
+import Navigbar from './navbar.js';
 
 function ProfileScreen({ history }) {
 
@@ -78,11 +79,14 @@ function ProfileScreen({ history }) {
 
     return (
         <div>
-            <div id='button' style={{paddingRight:"2rem"}}>
-                <button className='btn btn-dark rounded' style = {{marginRight:"1rem"}} onClick={() => navigate('/home')}>Home</button>
+            <Navigbar/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <div id='button' style={{paddingRight:"3rem",marginTop:"1rem"}}>
                 
                 <button className='btn btn-dark rounded' onClick={logoutHandler}>Logout</button>
-                 
                  
             </div>
             <Row className=''>

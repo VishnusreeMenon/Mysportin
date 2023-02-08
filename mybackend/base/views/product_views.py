@@ -67,7 +67,7 @@ def createProduct(request):
         countInStock=0,
         category='Sample Category',
         description='',
-        image = "./media/placeholder.png" 
+        image = "./placeholder.png" 
     )
 
     serializer = ProductSerializer(product, many=False)
