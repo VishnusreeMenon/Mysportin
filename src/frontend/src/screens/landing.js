@@ -103,7 +103,8 @@ function Landing(location) {
                 Sign Up
               </button>
               <br/>
-              <a href="#" style={{marginLeft:"50%"}}>Forgot password?</a>
+              <br/>
+              <a href="#" style={{marginLeft:"25%"}}>Forgot password?</a>
             </form>
             
         
